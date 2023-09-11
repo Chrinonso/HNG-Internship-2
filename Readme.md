@@ -127,6 +127,10 @@ a database connection is required to get the API running. Also, create a .env fi
 
 Use a tool like Postman to send requests to your API to create, retrieve, update, and delete persons. You can navigate to the API documentation at the top foe an easy way to navigate around it.
 
+UML DIAGRAM
+Here is the link to the UML diagram;
+https://lucid.app/lucidchart/64747335-83ca-45da-90b3-7c7037fead3a/edit?invitationId=inv_084a1d37-831c-4166-ac8c-5a54ffc8c124
+
 
 
 
