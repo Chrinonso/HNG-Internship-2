@@ -14,21 +14,21 @@ Endpoints
     Request:
     POST /api/
 
-{
-     "name": "starboy",
-};
+    {
+        "name": "starboy",
+    };
 
 
 Response (Success):
 HTTP Status: 200 OK
 
-{
+    {
         "person": {
             "name": "starboy",
             "_id": "650097b56960c35b600da8d5",
             "__v": 0
         },
-};
+    };
 
 
 Response (Error):
@@ -37,17 +37,17 @@ Name must be a string
 - if we put a number or integer as a name
 
 
-{
-        "name":"123"
-};
+    {
+            "name":"123"
+    };
 
 
-    - it spits back an error as name must be a string. Name must also be unique.
+- it spits back an error as name must be a string. Name must also be unique.
 
 
-{
-        "msg": "Your name must contain only alphabetic characters"
-};
+    {
+            "msg": "Your name must contain only alphabetic characters"
+    };
 
 
 2. Get a Person
@@ -62,13 +62,13 @@ HTTP Status: 200 OK
 - if "650099c66960c35b600da8d8" is the ID of the person we are trying to get.
 
 
-{
-    "person": {
-        "name": "star",
-        "_id": "650099c66960c35b600da8d8",
-        "__v": 0
-    },
-};
+    {
+        "person": {
+            "name": "star",
+            "_id": "650099c66960c35b600da8d8",
+            "__v": 0
+        },
+    };
 
 
 Response (Error):
@@ -76,9 +76,9 @@ if a wrong ID is provided;
 HTTP Status: 404 Not Found
 
 
-{
-    "error": "Person with the ID ${person_id }not found"
-};
+    {
+        "error": "Person with the ID ${person_id }not found"
+    };
 
 
 
@@ -115,9 +115,9 @@ Response (Error)
 HTTP Status: 404 Not Found
 
 
-{
-    "error": "Person with the id ${person_id}not found"
-};
+    {
+        "error": "Person with the id ${person_id}not found"
+    };
 
 
 4. Delete Person
@@ -131,18 +131,18 @@ Response (Success)
 HTTP Status: 200 OK
 
 
-{
-    "msg": "Person with the ID ${person_id}deleted successfully!!!"
-};
+    {
+        "msg": "Person with the ID ${person_id}deleted successfully!!!"
+    };
 
 
 Response (Error)
 HTTP Status: 404 Not Found
 
 
-{
-    "error": "Person with the ID ${person_id} not found"
-};
+    {
+        "error": "Person with the ID ${person_id} not found"
+    };
 
 
 
