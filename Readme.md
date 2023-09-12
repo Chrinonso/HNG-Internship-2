@@ -5,14 +5,16 @@ Introduction
 -Welcome to the Person CRUD API documentation. This API allows you to create, read, update, and delete person records.
 
 Base URL
--The base URL for all API endpoints is https://your-api-base-url.com/api.
+-Base URL for all API endpoints is https://hng-stage-two-ku0b.onrender.com/api.
 
 Endpoints
 1. Create a Person - This endpoint creates a person
     Endpoint: /api
     HTTP Method: POST
-    Request:
-    POST /api/
+
+Request:
+POST /api/
+
 
     {
         "name": "starboy",
@@ -59,8 +61,11 @@ Name must be a string
 
 Response (Success):
 HTTP Status: 200 OK
+
 - if "650099c66960c35b600da8d8" is the ID of the person we are trying to get.
 
+Response (Success):
+HTTP Status: 200 OK
 
     {
         "person": {
