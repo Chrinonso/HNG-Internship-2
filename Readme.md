@@ -97,18 +97,18 @@ Example body (Raw)
     "name": "star",
 };
 
-Response (Success)
-HTTP Status: 200 OK
+    Response (Success)
+    HTTP Status: 200 OK
 
 
-{
-    "person": {
-        "_id": "650099c66960c35b600da8d8",
-        "name": "star",
-        "__v": 0
-    },
-    "msg": "Person with ID 650099c66960c35b600da8d8 has been Updated succesfully!!!"
-};
+    {
+        "person": {
+            "_id": "650099c66960c35b600da8d8",
+            "name": "star",
+            "__v": 0
+        },
+        "msg": "Person with ID 650099c66960c35b600da8d8 has been Updated succesfully!!!"
+    };
 
 
 Response (Error)
@@ -172,9 +172,7 @@ a database connection is required to get the API running. Also, create a .env fi
 
 Use a tool like Postman to send requests to your API to create, retrieve, update, and delete persons. You can navigate to the API documentation at the top for an easy way to navigate around it.
 
-UML DIAGRAM
-Here is the link to the UML diagram;
-https://lucid.app/lucidchart/64747335-83ca-45da-90b3-7c7037fead3a/edit?invitationId=inv_084a1d37-831c-4166-ac8c-5a54ffc8c124
+
 
 
 
