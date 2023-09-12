@@ -12,37 +12,43 @@ Endpoints
     Endpoint: /api
     HTTP Method: POST
     Request:
-        POST /api/
-        {
-        "name": "starboy",
-        };
+    POST /api/
 
-    Response (Success):
-    HTTP Status: 200 OK
+{
+     "name": "starboy",
+};
 
-    {
+
+Response (Success):
+HTTP Status: 200 OK
+
+{
         "person": {
             "name": "starboy",
             "_id": "650097b56960c35b600da8d5",
             "__v": 0
-        }
-    }
+        },
+};
 
 
-    Response (Error):
-    HTTP Status: 400 Bad Request
-    Name must be a string
-    - if we put a number or integer as a name
+Response (Error):
+HTTP Status: 400 Bad Request
+Name must be a string
+- if we put a number or integer as a name
 
-    {
+
+{
         "name":"123"
-    }
+};
+
 
     - it spits back an error as name must be a string. Name must also be unique.
 
-    {
+
+{
         "msg": "Your name must contain only alphabetic characters"
-    }
+};
+
 
 2. Get a Person
     Endpoint: /api/{person_id}
@@ -51,42 +57,49 @@ Endpoints
     GET /api/{person_id}
 
 
-    Response (Success):
-    HTTP Status: 200 OK
-    - if "650099c66960c35b600da8d8" is the ID of the person we are trying to get.
+Response (Success):
+HTTP Status: 200 OK
+- if "650099c66960c35b600da8d8" is the ID of the person we are trying to get.
+
 
 {
     "person": {
         "name": "star",
         "_id": "650099c66960c35b600da8d8",
         "__v": 0
-    }
-}
+    },
+};
 
-    Response (Error):
-    if a wrong ID is provided;
-    HTTP Status: 404 Not Found
 
-    {
+Response (Error):
+if a wrong ID is provided;
+HTTP Status: 404 Not Found
+
+
+{
     "error": "Person with the ID ${person_id }not found"
-    };
+};
+
+
 
 3. Update Person
     Endpoint: /api/{person_id}
     HTTP Method: PATCH
 
-    REQUEST:
-    PATCH /api/{person_id}
-    - if "650099c66960c35b600da8d8" is the ID of the person we are trying to get.
-    Example body (Raw)
 
-    {
+REQUEST:
+PATCH /api/{person_id}
+- if "650099c66960c35b600da8d8" is the ID of the person we are trying to get.
+Example body (Raw)
+
+
+{
     "name": "star",
-    };
+};
 
-    Response (Success)
+Response (Success)
+HTTP Status: 200 OK
 
-    HTTP Status: 200 OK
 
 {
     "person": {
@@ -95,35 +108,43 @@ Endpoints
         "__v": 0
     },
     "msg": "Person with ID 650099c66960c35b600da8d8 has been Updated succesfully!!!"
-}
+};
 
 
-    Response (Error)
-    HTTP Status: 404 Not Found
+Response (Error)
+HTTP Status: 404 Not Found
 
-    {
+
+{
     "error": "Person with the id ${person_id}not found"
-    }
+};
+
 
 4. Delete Person
-    Endpoint: /api/{person_id}
-    HTTP Method: DELETE
-    Request:
-    DELETE /api/{person_id}
+
+Endpoint: /api/{person_id}
+HTTP Method: DELETE
+Request:
+DELETE /api/{person_id}
     
-    Response (Success)
-    HTTP Status: 200 OK
+Response (Success)
+HTTP Status: 200 OK
 
-    {
+
+{
     "msg": "Person with the ID ${person_id}deleted successfully!!!"
-    };
+};
 
-    Response (Error)
-    HTTP Status: 404 Not Found
 
-    {
+Response (Error)
+HTTP Status: 404 Not Found
+
+
+{
     "error": "Person with the ID ${person_id} not found"
-    }
+};
+
+
 
     Known Limitations and Assumptions
 - Every Post request has a unique ID identifier that makes it easier for us to find a particular person, update and delete it.
