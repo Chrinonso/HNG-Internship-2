@@ -5,8 +5,20 @@ const CustomError = require('../errors');
 
 
 const createPerson = async (req,res) => {
-    const person = await Person.create(req.body);
-    res.status(StatusCodes.OK).json({ person });
+    const { name } = req.body;
+
+    // const existingPerson = await Person.find({name:name});
+    // if(existingPerson) {
+    //     throw new CustomError.BadRequestError('Oops!!! Name already exists, please provide a unique name')
+    // };
+
+    const person = await Person.create({ name });
+    if(!person) {
+        throw new CustomError.BadRequestError('Please provide a name')
+    }
+
+
+    res.status(StatusCodes.CREATED).json({ person });
 
 };
 
@@ -28,7 +40,7 @@ const updatePerson = async (req,res) => {
     if(!person) {
         throw new CustomError.NotFoundError(`There is no Person with ID ${personID}`)
     }
-    res.status(StatusCodes.OK).json({ person, msg: "Person Updated succesfully!!!" })
+    res.status(StatusCodes.OK).json({ person, msg: `Person with ID ${personID} has been Updated succesfully!!!` })
 };
 
 const deletePerson = async (req,res) => {
@@ -38,7 +50,7 @@ const deletePerson = async (req,res) => {
     if(!person) {
         throw new CustomError.NotFoundError(`There is no Person with ID ${personID}`)
     }
-    res.status(StatusCodes.OK).json({msg: "Person deleted succesfully!!!" })
+    res.status(StatusCodes.OK).json({msg: `Person with ID ${personID} has been deleted succesfully!!!` })
 };
 
 module.exports = {

@@ -27,7 +27,7 @@ app.use('/api', personRouter);
 
 
 app.get('/', (req,res) => {
-    res.send('This is my homepage')
+    res.send('This is my homepage for the HNG Stage-2 task')
 });
 
 app.use(notFoundMiddleware);

@@ -7,6 +7,7 @@ const PersonSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, 'Please provide a name'],
+        unique: [true, 'Name must be unique'],
         validate: {
             validator: function(value) {
                 // Use a regular expression to allow alphabetic characters and spaces

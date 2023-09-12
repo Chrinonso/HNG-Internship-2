@@ -8,30 +8,41 @@ Base URL
 -The base URL for all API endpoints is https://your-api-base-url.com/api.
 
 Endpoints
-1. Create a Person
+1. Create a Person - This endpoint creates a person
     Endpoint: /api
     HTTP Method: POST
     Request:
         POST /api/
         {
-        "name": "John Doe",
+        "name": "starboy",
         };
 
     Response (Success):
     HTTP Status: 200 OK
+
     {
-    "person": {
-        "_id": "person_id",
-        "name": "Elon Church",
+        "person": {
+            "name": "starboy",
+            "_id": "650097b56960c35b600da8d5",
+            "__v": 0
+        }
     }
-    };
+
 
     Response (Error):
     HTTP Status: 400 Bad Request
+    Name must be a string
+    - if we put a number or integer as a name
 
     {
-    "error": "Invalid request data"
-    };
+        "name":"123"
+    }
+
+    - it spits back an error as name must be a string. Name must also be unique.
+
+    {
+        "msg": "Your name must contain only alphabetic characters"
+    }
 
 2. Get a Person
     Endpoint: /api/{person_id}
@@ -39,17 +50,21 @@ Endpoints
     Request:
     GET /api/{person_id}
 
+
     Response (Success):
     HTTP Status: 200 OK
+    - if "650099c66960c35b600da8d8" is the ID of the person we are trying to get.
 
-    {
+{
     "person": {
-        "_id": "person_id",
-        "name": "Elon Church",
+        "name": "star",
+        "_id": "650099c66960c35b600da8d8",
+        "__v": 0
     }
-    }
+}
 
     Response (Error):
+    if a wrong ID is provided;
     HTTP Status: 404 Not Found
 
     {
@@ -62,20 +77,27 @@ Endpoints
 
     REQUEST:
     PATCH /api/{person_id}
+    - if "650099c66960c35b600da8d8" is the ID of the person we are trying to get.
+    Example body (Raw)
+
     {
-    "name": "Updated Name",
+    "name": "star",
     };
+
     Response (Success)
 
     HTTP Status: 200 OK
 
-    {
+{
     "person": {
-        "_id": "person_id",
-        "name": "Updated Name",
+        "_id": "650099c66960c35b600da8d8",
+        "name": "star",
+        "__v": 0
     },
-    "msg": "Person Updated successfully!!!"
-    }
+    "msg": "Person with ID 650099c66960c35b600da8d8 has been Updated succesfully!!!"
+}
+
+
     Response (Error)
     HTTP Status: 404 Not Found
 
@@ -126,6 +148,8 @@ a database connection is required to get the API running. Also, create a .env fi
 - Test the API
 
 Use a tool like Postman to send requests to your API to create, retrieve, update, and delete persons. You can navigate to the API documentation at the top foe an easy way to navigate around it.
+
+
 
 
 
