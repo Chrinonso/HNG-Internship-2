@@ -7,11 +7,6 @@ const CustomError = require('../errors');
 const createPerson = async (req,res) => {
     const { name } = req.body;
 
-    // const existingPerson = await Person.find({name:name});
-    // if(existingPerson) {
-    //     throw new CustomError.BadRequestError('Oops!!! Name already exists, please provide a unique name')
-    // };
-
     const person = await Person.create({ name });
     if(!person) {
         throw new CustomError.BadRequestError('Please provide a name')

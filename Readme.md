@@ -131,6 +131,8 @@ Endpoints
 - The API returns "Not Found" errors when a person with the specified ID is not found for retrieval, update, or deletion.
 - Custom created Validation errors are returned with a "Bad Request" status when the input data does not meet the required format or constraints.
 -The API does not provide pagination for large datasets.
+- When the user hits a route that we are not handling, the API throws a "Not-found error, Route you are looking for doesn't exist".
+- Custom made Bad-Request Errors and Not-found errors. Errors are properly handled. 
 
     Setting Up  the API Locally
 - Before setting up and deploying the API locally, ensure you have Node.js and npm (Node Package Manager) installed on your machine.
@@ -147,7 +149,11 @@ a database connection is required to get the API running. Also, create a .env fi
 - Your API should now be running on http://localhost:3000 or your preferred port.
 - Test the API
 
-Use a tool like Postman to send requests to your API to create, retrieve, update, and delete persons. You can navigate to the API documentation at the top foe an easy way to navigate around it.
+Use a tool like Postman to send requests to your API to create, retrieve, update, and delete persons. You can navigate to the API documentation at the top for an easy way to navigate around it.
+
+UML DIAGRAM
+Here is the link to the UML diagram;
+https://lucid.app/lucidchart/64747335-83ca-45da-90b3-7c7037fead3a/edit?invitationId=inv_084a1d37-831c-4166-ac8c-5a54ffc8c124
 
 
 
