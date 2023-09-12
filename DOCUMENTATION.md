@@ -1,7 +1,7 @@
 ![UML DIAGRAM](<UML DIagram/Starboy HNG UMLL.jpeg>)
 
 
-PERSON CRUD API DOCUMENTATION
+PERSON CRUD API DOCUMENTATION AND HOW TO USE
 
 Introduction
 
@@ -159,7 +159,7 @@ HTTP Status: 404 Not Found
 
 
 
-    Known Limitations and Assumptions
+Known Limitations and Assumptions
 - Every Post request has a unique ID identifier that makes it easier for us to find a particular person, update and delete it.
 - Input data for creating and updating persons should be in JSON format.
 - The API returns "Not Found" errors when a person with the specified ID is not found for retrieval, update, or deletion.
@@ -168,7 +168,7 @@ HTTP Status: 404 Not Found
 - When the user hits a route that we are not handling, the API throws a "Not-found error, Route you are looking for doesn't exist".
 - Custom made Bad-Request Errors and Not-found errors. Errors are properly handled. 
 
-    Setting Up  the API Locally
+Setting Up  the API Locally
 - Before setting up and deploying the API locally, ensure you have Node.js and npm (Node Package Manager) installed on your machine.
 - Clone the repository containing your API code to your local machine.
 - Install Dependencies, Navigate to the project directory and install the required dependencies. 
